@@ -1,1 +1,1 @@
-include ':app', ':2016_1216_recyclerview_demo'
+include ':app', ':2016_1216_recyclerview_demo', ':2016_1217_percentlayout_demo', ':2016_1217_menu_demo', ':2016_1217_customview_demo'

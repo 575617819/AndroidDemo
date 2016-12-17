@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yh.customview_demo.activity.MainActivity">
+
+    <!--include只是解决了重复布局代码的问题，但是如果每个标题栏中的back和home
+    按钮都需要响应事件，这个时候再每个activity中都需要添加响应事件，代码也会重复很多
+    所以引入TitleLayout继承自LinearLayout来进行添加响应事件-->
+    <!--<include layout="@layout/title"/>-->
+
+    <com.yh.customview_demo.customview.TitleLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.yh.customview_demo.customview.TitleLayout>
+
+    <Button
+        android:id="@+id/bt1_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="button1" />
+
+    <Button
+        android:id="@+id/bt2_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="button2" />
+
+</LinearLayout>
