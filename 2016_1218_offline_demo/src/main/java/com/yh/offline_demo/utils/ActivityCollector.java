@@ -8,25 +8,23 @@ import java.util.ArrayList;
 activity工具类
  */
 
-class ActivityCollector {
+public class ActivityCollector {
 
+    public static ArrayList<Activity> arrayListActivitys = new ArrayList<Activity>();
 
-    protected static ArrayList<Activity> arrayListActivitys = new ArrayList<Activity>();
-
-    protected static void addActivity(Activity activity) {
+    public static void addActivity(Activity activity) {
         arrayListActivitys.add(activity);
     }
 
-    protected static void removeActivity(Activity activity) {
+    public static void removeActivity(Activity activity) {
         arrayListActivitys.remove(activity);
     }
 
-    protected static void removeAllActivity() {
+    public static void removeAllActivity() {
         for (Activity activity : arrayListActivitys) {
             if (!activity.isFinishing()) {
                 activity.finish();
             }
         }
     }
-
 }
