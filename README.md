@@ -41,3 +41,43 @@
                     加载布局文件title.xml,并给按钮添加响应事件
             第三步：在需要使用统一风格标题栏activity加载的布局资源中，添加自定义TitleLayout，
                     并该在activity隐藏原有的标题栏
+                    
+
+####2016_1218_broadcast_demo
+    -监听网络是否可用的广播接受者（动态注册）
+    -监听系统开机的广播接受者（静态注册）
+    
+    -无序广播（标准广播）
+    -有序广播
+    
+    -动态注册
+        -即代码注册
+        -动态注册的广播必须取消注册
+                IntentFilter intentFilter = new IntentFilter();
+                //android.net.conn.CONNECTIVITY_CHANGE是网络发生变化时，系统发出的值
+                intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
+                networkReceiver = new NetworkReceiver();
+                registerReceiver(networkReceiver, intentFilter);
+                
+                unregisterReceiver(networkReceiver);
+         -优点：可以自由的控制广播的注册与注销，比较灵活
+         -缺点：必须在应用程序启动之后才能接收广播
+    -静态注册
+        -在AndroidManifest.xml文件中注册，无需启动应用程序即可接收广播
+        
+    -发送无序广播
+    -发送有序广播
+    -本地广播的使用（解决安全性问题）
+        
+            
+####2016_1218_offline_demo
+    -模拟实现强制下线功能
+        ActivityCollector:操作Activity的工具类
+                静态方法：addActivity/removeActivity/removeAllActivity
+        BaseActivity:项目中Activity的基类
+                添加activity(onCreate)、移除activity(onDestroy)、注册广播(onResume)、注销广播(onPause)
+        LoginActivity:登录activity
+                用户名、密码、登录按钮
+        MainActivity:发送广播
+        OfflineReceiver:广播接收者
+    
