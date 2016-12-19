@@ -80,4 +80,22 @@
                 用户名、密码、登录按钮
         MainActivity:发送广播
         OfflineReceiver:广播接收者
-    
+
+
+####2016_1219_handler_demo
+    -Android中不允许在子线程中更新ui,随意提供了异步消息处理机制
+        Handler
+        AsyncTask
+        
+    -Handler机制
+        Message:即线程之间传递的消息，可以携带数据(包括整型数据、Object对象)
+                message.what
+                message.arg1
+                message.arg2
+                message.obj
+        Handler:通过Handler来发送消息和处理消息
+        MessageQueue:消息队列，用于存放所有通过Handler的sendMessage方法发送的消息
+        Looper:是每个线程MessageQueue的管家，调用Looper的loop方法，就会进入到一个循环当中，
+            当发现MessageQueue中存在消息，就将消息取出来，并传递给Handler的handleMessage方法中
+        
+    -runOnUiThread()方法是一个异步消息机制的封装接口
