@@ -3,8 +3,8 @@
 
 ####2016_1216_recyclerview_demo
     - RecyclerView使用步骤
-            第一步：Android团队将RecyclerView定义在support库当中，所以需要在项目的build.gradle文件中添加百分比布局的依赖。
-                    即打开使用RecyclerView百分比布局module目录下的build.gradle文件，在dependencies闭包中添加
+            第一步：Android团队将RecyclerView定义在support库当中，所以需要在项目的build.gradle文件中添加RecyclerView的依赖。
+                    即打开使用RecyclerView的module目录下的build.gradle文件，在dependencies闭包中添加
                     compile 'com.android.support:recyclerview-v7:24.2.1'
             第二步：创建Adapter,继承自RecyclerView.Adapter;创建内部类，构造方法，并重写onCreateViewHolder、onBindViewHolder、getItemCount三个构造方法
             第三步：需要使用RecyclerView的activity的布局资源中添加RecyclerView控件，并设置布局方式和适配器，完成RecyclerView和数据之间的关联
@@ -99,3 +99,9 @@
             当发现MessageQueue中存在消息，就将消息取出来，并传递给Handler的handleMessage方法中
         
     -runOnUiThread()方法是一个异步消息机制的封装接口
+    
+    
+####2016_1223_chat_demo
+>模拟聊天界面的实现
+>>只是一个简单的基于RecyclerView的聊天功能demo
+  真正开发中的聊天功能还得根据项目需求来改善
